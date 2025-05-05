@@ -1,0 +1,15 @@
+.navbar-container {
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-item {
+  font-size: 20px;
+  &:hover {
+    color: #8a2cf4;
+    font-weight: bolder;
+  }
+}
