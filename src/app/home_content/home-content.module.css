@@ -1,14 +1,22 @@
 .content {
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.wrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.town {
-  color: #580dae;
+.wrapper > div:first-child {
+  flex: 1;
+  padding-right: 20px;
 }
 
-.talks {
-  color: #ffc100;
+.wrapper > div:last-child {
+  flex-shrink: 0;
 }
