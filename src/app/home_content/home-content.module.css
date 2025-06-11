@@ -1,7 +1,8 @@
 .content {
   width: 100%;
-  padding: 20px 40px;
+  padding: 60px 20px;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .wrapper {
@@ -10,13 +11,44 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 40px;
 }
 
 .wrapper > div:first-child {
   flex: 1;
-  padding-right: 20px;
 }
 
 .wrapper > div:last-child {
   flex-shrink: 0;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.town {
+  color: #870cf7;
+}
+
+.talks {
+  color: #fbbf24;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.structure {
+  margin-top: 30px;
+  text-align: center;
 }

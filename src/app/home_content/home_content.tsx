@@ -6,28 +6,31 @@ export default function HomeContent() {
     <div className={css.content}>
       <div className={css.wrapper}>
         <div>
-          <h1>
+          <h1 className={css.title}>
             Benvenuto su <span className={css.town}>Town</span>
             <span className={css.talks}>Talks</span>
           </h1>
-          <h2>La piattaforma di banchmarking politico</h2>
-          <p>
+          <h2 className={css.subtitle}>
+            La piattaforma di benchmarking politico
+          </h2>
+          <p className={css.description}>
             Scopri, confronta e analizza le opinioni politiche per restare
-            sempre <br />
-            informato e fare la differenza nella tua comunità. Unisciti a noi e
-            <br />
-            partecipa al dibattito che costruisce il futuro.
+            sempre informato e fare la differenza nella tua comunità. <br />
+            Unisciti a noi e partecipa al dibattito che costruisce il futuro.
           </p>
         </div>
         <div>
           <Image
             src="/images/home.png"
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             alt="Home Image"
           />
         </div>
       </div>
+      <h1 className={css.structure}>
+        Com&apos;è <span className={css.town}>strutturata</span> la piattaforma?
+      </h1>
     </div>
   );
 }
