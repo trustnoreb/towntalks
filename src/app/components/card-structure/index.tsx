@@ -2,8 +2,6 @@ import css from "./card_structure.module.css";
 import Image from "next/image";
 const data = [
   {
-    key: 1,
-    name: "firstCard",
     title: "I candidati",
     icon: (
       <Image
@@ -17,8 +15,6 @@ const data = [
       "Nella presente sezione troverai informazioni sui candidati alle elezioni",
   },
   {
-    key: 2,
-    name: "secondCard",
     title: "Le tematiche",
     icon: (
       <Image
@@ -32,8 +28,6 @@ const data = [
       "In questa parte potrai esaminare le tematiche del dibattito politico",
   },
   {
-    key: 3,
-    name: "thirdCard",
     title: "Il confronto",
     icon: (
       <Image
@@ -51,21 +45,10 @@ function CardStructure() {
   return (
     <>
       {data.map((card, idx) => (
-        <div
-          key={idx}
-          className={`${css.card} ${idx % 2 === 0 ? css.violet : css.yellow}`}
-        >
-          <h2
-            className={`${css.card_title} ${
-              idx % 2 === 0 ? css.white_font : css.black_font
-            }`}
-          >
-            {card.title}
-          </h2>
-          <span>{card.icon}</span>
-          <p className={idx % 2 === 0 ? css.white_font : css.black_font}>
-            {card.descr}
-          </p>
+        <div key={idx} className={css.card}>
+          <h2 className={css.card_text}>{card.title}</h2>
+          <span className={css.card_icon}>{card.icon}</span>
+          <p className={css.card_text}>{card.descr}</p>
         </div>
       ))}
     </>

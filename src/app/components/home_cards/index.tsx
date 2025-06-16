@@ -1,4 +1,4 @@
-import CardStructure from "../card_structure/card_structure";
+import CardStructure from "../card-structure";
 import css from "./home_cards.module.css";
 
 function HomeCards() {
