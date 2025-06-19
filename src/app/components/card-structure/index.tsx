@@ -44,13 +44,19 @@ const data = [
 function CardStructure() {
   return (
     <>
-      {data.map((card, idx) => (
-        <div key={idx} className={css.card}>
-          <h2 className={css.card_text}>{card.title}</h2>
-          <span className={css.card_icon}>{card.icon}</span>
-          <p className={css.card_text}>{card.descr}</p>
-        </div>
-      ))}
+      <h1 className={css.structure_heading}>
+        Com&apos;è<span className={css.town}>&nbsp;strutturata&nbsp;</span> la
+        piattaforma?
+      </h1>
+      <div className={css.card_container}>
+        {data.map((card, idx) => (
+          <div key={idx} className={css.card}>
+            <h2 className={css.card_text}>{card.title}</h2>
+            <span className={css.card_icon}>{card.icon}</span>
+            <p className={css.card_text}>{card.descr}</p>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
