@@ -1,5 +1,8 @@
+"use client";
+import { motion, useInView } from "framer-motion";
 import css from "./card_structure.module.css";
 import Image from "next/image";
+import { useRef } from "react";
 const data = [
   {
     title: "I candidati",
@@ -42,8 +45,15 @@ const data = [
 ];
 
 function CardStructure() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <h1 className={css.structure_heading}>
         Com&apos;è<span className={css.town}>&nbsp;strutturata&nbsp;</span> la
         piattaforma?
@@ -57,7 +67,7 @@ function CardStructure() {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 }
 

@@ -1,5 +1,8 @@
+"use client";
+import { useRef } from "react";
 import SectionBase from "../section-base/section-base";
 import css from "./sections.module.css";
+import { motion, useInView } from "framer-motion";
 
 const sectionInfo = [
   {
@@ -17,12 +20,20 @@ const sectionInfo = [
 ];
 
 function Sections() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className={css.sections_container}>
+    <motion.div
+      className={css.sections_container}
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       {sectionInfo.map((section, idx) => (
         <SectionBase key={idx} index={idx} data={section} />
       ))}
-    </div>
+    </motion.div>
   );
 }
 export default Sections;

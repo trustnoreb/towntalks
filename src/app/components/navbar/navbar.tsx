@@ -12,19 +12,19 @@ function Navbar() {
       <Link href="/" className={css["navbar-item"]}>
         Home
       </Link>
-      <Link href="/about" className={css["navbar-item"]}>
+      <Link href="/candidati" className={css["navbar-item"]}>
         Candidati
       </Link>
-      <Link href="/contact" className={css["navbar-item"]}>
+      <Link href="/tematiche" className={css["navbar-item"]}>
         Tematiche
       </Link>
-      <Link href="/contact" className={css["navbar-item"]}>
+      <Link href="/confronto" className={css["navbar-item"]}>
         Confronto
       </Link>
-      <Link href="/contact" className={css["navbar-item"]}>
+      <Link href="/faq" className={css["navbar-item"]}>
         FAQ
       </Link>
-      <Link href="/contact" className={css["navbar-item"]}>
+      <Link href="/admin_settings" className={css["navbar-item"]}>
         <AdminPanelSettingsIcon sx={{ fontSize: 40, color: "#8A2CF4" }} />
       </Link>
     </nav>
