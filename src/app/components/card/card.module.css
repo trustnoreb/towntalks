@@ -1,6 +1,6 @@
 .container {
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 550px;
   border-radius: 1rem;
   &:nth-child(even) {
     background-color: #870cf7;
@@ -14,5 +14,28 @@
 
 .name {
   margin: 30px;
-  text-align: center;
+}
+
+.card_image {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.discover_container {
+  display: flex;
+  justify-content: end;
+  margin: 40px;
+}
+
+.discover {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  margin: 0 25px 0 0;
+}
+
+.arrow {
+  font-weight: bold;
 }
