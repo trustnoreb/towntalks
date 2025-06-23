@@ -1,5 +1,5 @@
 import Image from "next/image";
-import css from "./section-base.module.css";
+import css from "./section.module.css";
 
 interface Props {
   data: {
@@ -10,7 +10,7 @@ interface Props {
   index: number;
 }
 
-function SectionBase({ data, index }: Props) {
+function Section({ data, index }: Props) {
   const isEven = index % 2 == 0;
 
   return (
@@ -35,4 +35,4 @@ function SectionBase({ data, index }: Props) {
   );
 }
 
-export default SectionBase;
+export default Section;

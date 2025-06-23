@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import css from "./card_structure.module.css";
+import css from "./features_overview.module.css";
 import Image from "next/image";
 import { useRef } from "react";
 const data = [
@@ -44,7 +44,7 @@ const data = [
   },
 ];
 
-function CardStructure() {
+function FeaturesOverview() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -71,4 +71,4 @@ function CardStructure() {
   );
 }
 
-export default CardStructure;
+export default FeaturesOverview;

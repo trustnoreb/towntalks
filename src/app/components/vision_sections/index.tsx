@@ -1,8 +1,8 @@
 "use client";
 import { useRef } from "react";
-import SectionBase from "../section-base/section-base";
-import css from "./sections.module.css";
+import css from "./vision_sections.module.css";
 import { motion, useInView } from "framer-motion";
+import Section from "../section/section";
 
 const sectionInfo = [
   {
@@ -19,7 +19,7 @@ const sectionInfo = [
   },
 ];
 
-function Sections() {
+function VisionSections() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -31,9 +31,9 @@ function Sections() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {sectionInfo.map((section, idx) => (
-        <SectionBase key={idx} index={idx} data={section} />
+        <Section key={idx} index={idx} data={section} />
       ))}
     </motion.div>
   );
 }
-export default Sections;
+export default VisionSections;

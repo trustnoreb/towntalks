@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import css from "./home-content.module.css";
-export default function HomeContent() {
+import css from "./welcome_banner.module.css";
+function WelcomeBanner() {
   return (
     <div className={css.wrapper}>
       <div>
@@ -29,3 +29,5 @@ export default function HomeContent() {
     </div>
   );
 }
+
+export default WelcomeBanner;
