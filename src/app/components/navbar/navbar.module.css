@@ -13,3 +13,8 @@
     font-weight: bolder;
   }
 }
+
+.active {
+  color: #8a2cf4;
+  font-weight: bold;
+}

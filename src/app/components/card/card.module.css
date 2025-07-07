@@ -1,0 +1,42 @@
+.container {
+  width: 450px;
+  height: 550px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  &:nth-child(even) {
+    background-color: #870cf7;
+    color: #f5f5f5;
+  }
+  &:nth-child(odd) {
+    background: #ffc100;
+    color: #000000;
+  }
+}
+
+.name {
+  margin: 30px;
+}
+
+.card_image {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.discover_container {
+  display: flex;
+  justify-content: end;
+  margin: 40px;
+}
+
+.discover {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  margin: 0 25px 0 0;
+}
+
+.arrow {
+  font-weight: bold;
+}

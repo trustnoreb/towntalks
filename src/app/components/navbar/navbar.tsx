@@ -3,30 +3,40 @@ import Link from "next/link";
 import css from "./navbar.module.css";
 import Image from "next/image";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import { useState } from "react";
+
+const links = [
+  { path: "", label: "Logo", type: "image", image: "/images/logo.png" },
+  { path: "/", label: "Home", type: "text" },
+  { path: "/candidati", label: "Candidati", type: "text" },
+  { path: "/tematiche", label: "Tematiche", type: "text" },
+  { path: "/faq", label: "FAQ", type: "text" },
+  { path: "/admin_settings", label: "Admin", type: "icon" },
+];
+
 function Navbar() {
+  const [activePath, setActivePath] = useState("/");
+
   return (
     <nav className={css["navbar-container"]}>
-      <Link href="/" className={css["navbar-item"]}>
-        <Image src="/images/logo.png" width={50} height={50} alt="Logo" />
-      </Link>
-      <Link href="/" className={css["navbar-item"]}>
-        Home
-      </Link>
-      <Link href="/candidati" className={css["navbar-item"]}>
-        Candidati
-      </Link>
-      <Link href="/tematiche" className={css["navbar-item"]}>
-        Tematiche
-      </Link>
-      <Link href="/confronto" className={css["navbar-item"]}>
-        Confronto
-      </Link>
-      <Link href="/faq" className={css["navbar-item"]}>
-        FAQ
-      </Link>
-      <Link href="/admin_settings" className={css["navbar-item"]}>
-        <AdminPanelSettingsIcon sx={{ fontSize: 40, color: "#8A2CF4" }} />
-      </Link>
+      {links.map((link, idx) => (
+        <Link
+          key={idx}
+          href={link.path}
+          className={`${css["navbar-item"]} ${
+            activePath === link.path ? css["active"] : null
+          }`}
+          onClick={() => setActivePath(link.path)}
+        >
+          {link.type === "image" && (
+            <Image src={link.image!} alt={link.label} width={50} height={50} />
+          )}
+          {link.type === "icon" && (
+            <AdminPanelSettingsIcon sx={{ fontSize: 40, color: "#8A2CF4" }} />
+          )}
+          {link.type === "text" && <span>{link.label}</span>}
+        </Link>
+      ))}
     </nav>
   );
 }

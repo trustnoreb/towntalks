@@ -1,0 +1,7 @@
+.cards_container {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 50px 0 50px 0;
+}
