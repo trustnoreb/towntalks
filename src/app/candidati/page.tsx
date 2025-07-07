@@ -7,7 +7,7 @@ function Candidati() {
       <h1 className={css.heading}>
         Scopri i <span className={css.purple}>candidati</span>
       </h1>
-      <h2 className={css.sub_heading}>Tutti i candidati</h2>
+      <h1 className={css.sub_heading}>Tutti i candidati</h1>
       <Cards />
     </>
   );
