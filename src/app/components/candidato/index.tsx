@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import css from "./card.module.css";
+import css from "./candidato.module.css";
 import { motion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
     photo: string;
   };
 }
-function Card({ data }: Props) {
+function Candidato({ data }: Props) {
   return (
     <div className={css.container}>
       <Image
@@ -41,4 +41,4 @@ function Card({ data }: Props) {
   );
 }
 
-export default Card;
+export default Candidato;
