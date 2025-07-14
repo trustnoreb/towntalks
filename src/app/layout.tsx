@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/navbar";
+import ReduxProvider from "./providers/ReduxProvider";
 
 const titilliumWeb = Titillium_Web({
   variable: "--font-titillium-web",
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={titilliumWeb.variable}>
-        <Navbar />
-        <main>{children}</main>
+        <ReduxProvider>
+          <Navbar />
+          <main>{children}</main>
+        </ReduxProvider>
       </body>
     </html>
   );
