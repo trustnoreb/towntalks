@@ -1,3 +1,4 @@
+import { Counter } from "@/app/features/counter/Counter";
 import FeaturesOverview from "../features_overview";
 import VisionSections from "../vision_sections";
 import WelcomeBanner from "../welcome_banner";
@@ -8,6 +9,7 @@ function HomePage() {
       <WelcomeBanner />
       <FeaturesOverview />
       <VisionSections />
+      <Counter />
     </>
   );
 }

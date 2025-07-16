@@ -13,6 +13,12 @@
   }
 }
 
+.tool_bar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rebeccapurple;
+}
+
 .name {
   margin: 30px;
 }
