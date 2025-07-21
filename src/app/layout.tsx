@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/navbar";
 import ReduxProvider from "./providers/ReduxProvider";
 
 const titilliumWeb = Titillium_Web({

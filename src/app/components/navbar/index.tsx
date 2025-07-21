@@ -9,7 +9,7 @@ const links = [
   { path: "", label: "Logo", type: "image", image: "/images/logo.png" },
   { path: "/", label: "Home", type: "text" },
   { path: "/candidati_page", label: "Candidati", type: "text" },
-  { path: "/tematiche", label: "Tematiche", type: "text" },
+  { path: "/tematiche_page", label: "Tematiche", type: "text" },
   { path: "/faq", label: "FAQ", type: "text" },
   { path: "/admin_settings", label: "Admin", type: "icon" },
 ];
