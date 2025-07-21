@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Candidato from "../candidato";
 import SearchBar from "../search_bar";
 import css from "./candidati.module.css";
 import Card from "../card";
