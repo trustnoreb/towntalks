@@ -1,28 +1,33 @@
-import Candidato from "../components/candidato";
-import SearchBar from "../components/search_bar";
+"use client";
+import { useState } from "react";
+import Candidato from "../candidato";
+import SearchBar from "../search_bar";
 import css from "./candidati.module.css";
+import Card from "../card";
 const data = [
-  { name: "Mario Rossi", icon: "", photo: "/images/candidati/mario_rossi.png" },
+  { name: "Mario Rossi", photo: "/images/candidati/mario_rossi.png" },
   {
     name: "Elena Moretti",
-    icon: "",
     photo: "/images/candidati/eleonora_moretti.png",
   },
   {
     name: "Luca Bianchi",
-    icon: "",
     photo: "/images/candidati/luca_bianchi.png",
   },
   {
     name: "Chiara Rinaldi",
-    icon: "",
     photo: "/images/candidati/chiara_rinaldi.png",
   },
-  { name: "Paolo Blu", icon: "", photo: "/images/candidati/paolo_blu.png" },
-  { name: "Carla Verdi", icon: "", photo: "/images/candidati/carla_verdi.png" },
+  { name: "Paolo Blu", photo: "/images/candidati/paolo_blu.png" },
+  { name: "Carla Verdi", photo: "/images/candidati/carla_verdi.png" },
 ];
 
 function Candidati() {
+  const [filterName, setFilterName] = useState("");
+  const filteredData = data.filter((candidato) =>
+    candidato.name.toLocaleLowerCase().includes(filterName.toLocaleLowerCase())
+  );
+
   return (
     <>
       <h1 className={css.heading}>
@@ -30,14 +35,15 @@ function Candidati() {
       </h1>
       <div>
         <div className={css.tool_bar}>
-          <SearchBar />
+          <SearchBar setFilter={setFilterName} />
           <div className={css.search_button}>Ordina</div>
         </div>
       </div>
       <h1 className={css.sub_heading}>Tutti i candidati</h1>
       <div className={css.cards_container}>
-        {data.map((candidato, idx) => (
-          <Candidato key={idx} data={candidato} />
+        {filteredData.map((candidato, idx) => (
+          <Card key={idx} name={candidato.name} photo={candidato.photo} />
+          // <Candidato key={idx} data={candidato} />
         ))}
       </div>
     </>

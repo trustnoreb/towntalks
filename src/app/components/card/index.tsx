@@ -1,29 +1,41 @@
-"use client";
-
+import css from "./card.module.css";
 import Image from "next/image";
-import css from "./candidato.module.css";
 import { motion } from "framer-motion";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { ReactElement } from "react";
+
 interface Props {
-  data: {
-    name: string;
-    icon: string;
-    photo: string;
-  };
+  icon?: ReactElement;
+  name: string;
+  photo: string;
+  descr?: string;
 }
-function Candidato({ data }: Props) {
+
+function Card({ icon, name, photo, descr }: Props) {
+  console.log("ICON:", icon);
+
   return (
     <div className={css.container}>
       <Image
-        src={data.photo}
-        alt={data.name}
+        src={photo}
+        alt={name}
         width={450}
         height={300}
         className={css.card_image}
       />
-      <div className={css.name}>
-        <h2>{data.name}</h2>
+      <div className={icon ? css.name : css.title_tag}>
+        {!icon ? (
+          <h2>{name}</h2>
+        ) : (
+          <>
+            <span>
+              <span> {icon}</span>
+              <span> {name}</span>
+            </span>
+          </>
+        )}
       </div>
+      {descr && <div>{descr}</div>}
       <div className={css.discover_container}>
         <div className={css.discover}>
           <motion.div
@@ -41,4 +53,4 @@ function Candidato({ data }: Props) {
   );
 }
 
-export default Candidato;
+export default Card;
